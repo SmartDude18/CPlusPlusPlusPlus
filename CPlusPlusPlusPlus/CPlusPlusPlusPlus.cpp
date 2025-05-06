@@ -5,7 +5,10 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Hello World!\nWhat is your name?\n";
+    std::string playerInput = "";
+    std::cin >> playerInput;
+    std::cout << "Hello " + playerInput;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
