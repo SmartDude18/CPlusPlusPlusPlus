@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dataTypes", "dataTypes\data
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Employees", "Employees\Employees.vcxproj", "{7599A071-1161-46B0-8C12-33B2977FAFF3}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DiceGame", "DiceGame\DiceGame.vcxproj", "{BCDBC5A0-6C2C-408B-8159-A014F055228C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{7599A071-1161-46B0-8C12-33B2977FAFF3}.Release|x64.Build.0 = Release|x64
 		{7599A071-1161-46B0-8C12-33B2977FAFF3}.Release|x86.ActiveCfg = Release|Win32
 		{7599A071-1161-46B0-8C12-33B2977FAFF3}.Release|x86.Build.0 = Release|Win32
+		{BCDBC5A0-6C2C-408B-8159-A014F055228C}.Debug|x64.ActiveCfg = Debug|x64
+		{BCDBC5A0-6C2C-408B-8159-A014F055228C}.Debug|x64.Build.0 = Debug|x64
+		{BCDBC5A0-6C2C-408B-8159-A014F055228C}.Debug|x86.ActiveCfg = Debug|Win32
+		{BCDBC5A0-6C2C-408B-8159-A014F055228C}.Debug|x86.Build.0 = Debug|Win32
+		{BCDBC5A0-6C2C-408B-8159-A014F055228C}.Release|x64.ActiveCfg = Release|x64
+		{BCDBC5A0-6C2C-408B-8159-A014F055228C}.Release|x64.Build.0 = Release|x64
+		{BCDBC5A0-6C2C-408B-8159-A014F055228C}.Release|x86.ActiveCfg = Release|Win32
+		{BCDBC5A0-6C2C-408B-8159-A014F055228C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
