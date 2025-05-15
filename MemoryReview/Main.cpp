@@ -7,6 +7,16 @@ struct Person
 	int id;
 };
 
+void square(int& val)
+{
+	val = val * val;
+}
+
+void Double(int* point)
+{
+	*point = *point * 2;
+}
+
 int main()
 {
 	// ** REFERENCE **
@@ -26,10 +36,15 @@ int main()
 
 	newVal = 12;
 	std::cout << val << std::endl;
+	//when we modified the reference, the variable changed as well
 
 	// output the address of the int variable
 	// output the address of the int reference
 	// are the addresses the same or different? (insert answer)
+	std::cout << &val << std::endl;
+	std::cout << &newVal << std::endl;
+
+	//the addresses are indeed the same 
 
 	// ** REFERENCE PARAMETER **
 	//
@@ -37,7 +52,11 @@ int main()
 	// in the function, multiply the int parameter by itself and assign it back to the parameter (i = i * i)
 	// call the Square function with the int variable created in the REFERENCE section
 
+	square(val);
+
 	// output the int variable to the console
+
+	std::cout << val << std::endl;
 
 	// !! notice how the variable has not changed, this is because we only passed the value to the function !!
 	// change the Square function to take a int reference
@@ -49,9 +68,14 @@ int main()
 	// declare an int pointer, set it to nullptr (it points to nothing)
 	// set the int pointer to the address of the int variable created in the REFERENCE section
 
+	int* point = nullptr;
+	point = &newVal;
+	std::cout << *point << std::endl;
+	std::cout << point << endl;
+
 	// output the value of the pointer
-	// what is this address that the pointer is pointing to? (insert answer)
-	// output the value of the object the pointer is pointing to (dereference the pointer)
+	// what is this address that the pointer is pointing to? (insert answer) 0000002BDF8FF784
+	// output the value of the object the pointer is pointing to (dereference the pointer) 144
 
 	// ** POINTER PARAMETER **
 	//
@@ -60,8 +84,14 @@ int main()
 	// !! make sure to dereference the pointer to set the value and not set the address !!
 	// call the Double function with the pointer created in the POINTER VARIABLE section
 
+	Double(point);
+
 	// output the dereference pointer
 	// output the int variable created in the REFERENCE section
 	// did the int variable's value change when using the pointer?
+
+	std::cout << *point << std::endl;
+	std::cout << val << std::endl;
+	//variable did change
 
 }
