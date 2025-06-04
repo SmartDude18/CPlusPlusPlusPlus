@@ -1,3 +1,6 @@
+#include <fstream>
+#include <string>
+#include <vector>
 #include "Database.h"
 #include "SportsTeam.h"
 #include "BasketBallTeam.h"
@@ -5,22 +8,33 @@
 
 void Database::Create(SportsTeam::sport type)
 {
-    SportsTeam* holdTeam = nullptr;
-    switch (type)
+    std::ofstream myfile("dataBase.txt", std::ios::app);
+    if (myfile.is_open())
     {
+        SportsTeam* holdVectorTeam = nullptr;
+        switch (type)
+        {
         case SportsTeam::sport::BASKETBALL:
         {
-            holdTeam = new BasketBallTeam();
+            BasketBallTeam* holdTeam = new BasketBallTeam();
+            holdTeam->Add(std::cout, std::cin);
+            holdVectorTeam = holdTeam;
+            myfile << *holdTeam << "\n";
             break;
         }
         case SportsTeam::sport::TENNIS:
         {
+            TennisTeam* holdTeam = new TennisTeam();
             holdTeam = new TennisTeam();
+            holdTeam->Add(std::cout, std::cin);
+            holdVectorTeam = holdTeam;
+            myfile << *holdTeam << "\n";
             break;
         }
-    }
-    holdTeam->Add(std::cout, std::cin);
-    data.push_back(holdTeam);
+        }
+        data.push_back(holdVectorTeam);
+        myfile.close();
+    } 
 }
 
 void Database::DisplayAll()
@@ -58,5 +72,48 @@ Database::~Database()
     for (SportsTeam* team : data)
     {
         delete team;
+    }
+}
+
+Database::Database()
+{
+    std::string line, holdLineSection = "";
+    std::vector<std::string> holdComponents;
+    bool readSection = false;
+    std::ifstream myfile("dataBase.txt");
+    if (myfile.is_open())
+    {
+        while (getline(myfile, line))
+        {
+            holdComponents.clear();
+            for (char c : line)
+            {
+                if (c == ':')
+                {
+                    readSection = true;
+                    continue;
+                }
+                else if (c == ';')
+                {
+                    readSection = false;
+                    holdComponents.push_back(holdLineSection);
+                    holdLineSection = "";
+                    continue;
+                }
+                if (readSection)
+                {
+                    holdLineSection += c;
+                }
+            }
+            if (holdComponents[0] == "TennisTeam")
+            {
+                data.push_back(new TennisTeam(holdComponents[1], std::stoi(holdComponents[2])));
+            }
+            else if (holdComponents[0] == "BasketBallTeam")
+            {
+                data.push_back(new BasketBallTeam(holdComponents[1], std::stoi(holdComponents[2])));
+            }
+        }
+        myfile.close();
     }
 }

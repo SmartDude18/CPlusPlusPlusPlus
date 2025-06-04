@@ -9,6 +9,7 @@ private:
 
 public:
 	~Database(); 
+	Database();
 	void Create(SportsTeam::sport type);
 	void DisplayAll();
 	void Display(const std::string& name);

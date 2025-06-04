@@ -49,7 +49,7 @@ int main()
             case 5:
             {
                 delete dataHold;
-                exit;
+                exit(0);
             }
         }
     }

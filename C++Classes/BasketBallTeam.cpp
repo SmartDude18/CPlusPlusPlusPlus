@@ -1,5 +1,7 @@
 #include "BasketBallTeam.h"
 
+BasketBallTeam::BasketBallTeam() {}
+
 void BasketBallTeam::Add(std::ostream& ostream, std::istream& istream)
 {
 	SportsTeam::Add(ostream, istream); 

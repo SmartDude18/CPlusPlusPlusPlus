@@ -1,6 +1,15 @@
 #include "SportsTeam.h"
 #include <string>
 #include <iostream>
+
+
+SportsTeam::SportsTeam() {}
+
+SportsTeam::SportsTeam(std::string newName)
+{
+	name = newName;
+}
+
 std::string SportsTeam::getName()
 {
 	return name;

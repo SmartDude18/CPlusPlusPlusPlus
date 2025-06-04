@@ -1,0 +1,3 @@
+Type:TennisTeam;Name:nooo;NumberOfWins:222;
+Type:BasketBallTeam;Name:popoff;AverageBasketsPerGame:12;
+Type:TennisTeam;Name:williams;NumberOfWins:223;

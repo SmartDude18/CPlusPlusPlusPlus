@@ -4,6 +4,8 @@
 class SportsTeam
 {
 public:
+	SportsTeam();
+	SportsTeam(std::string);
 	enum sport
 	{
 		BASKETBALL,
