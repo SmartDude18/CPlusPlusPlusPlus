@@ -2,6 +2,7 @@
 //
 
 #include <iostream>
+#include <memory>
 #include "Database.h"
 #include <string>
 
@@ -15,7 +16,7 @@ SportsTeam::sport getType()
 
 int main()
 {
-    Database* dataHold = new Database();
+    std::unique_ptr<Database> dataHold(new Database());
     while (true)
     {
         std::cout << "1: Create\n2: Display All\n3: Display by Name\n4: Display by Type\n5: Quit\n";
@@ -48,7 +49,6 @@ int main()
             }
             case 5:
             {
-                delete dataHold;
                 exit(0);
             }
         }
